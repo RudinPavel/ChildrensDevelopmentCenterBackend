@@ -1,0 +1,17 @@
+# Конфигурационный файл
+server:
+  port: 8080
+spring:
+  datasource:
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/childrensdevelopmentcenter}
+    driverClassName: org.postgresql.Driver
+    password: ${SPRING_DATASOURCE_PASSWORD:111111}
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.xml
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
